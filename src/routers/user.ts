@@ -1,5 +1,4 @@
 import express from "express";
-const { sendWelcomeEmail, sendRemovalEmail } = require("../emails/account");
 const router = new express.Router();
 
 router.get("/user", async (req, res) => {
