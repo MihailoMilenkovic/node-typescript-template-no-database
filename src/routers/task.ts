@@ -3,17 +3,21 @@ import axios from "axios";
 const router = new express.Router();
 /**
  * @swagger
- * /task:
- * get:
- *  summary: get a task
- *  description: Use to request information about a single specific task
- *  responses:
- *    200:
- *      description: Returns a single task
- *      content:
- *        application/json:
- *          schema:
- *            type: object
+ * /api/clients:
+ *  get:
+ *    summary: get clients
+ *    description: Use to request all clients
+ *    responses:
+ *      200:
+ *        description: Returns an array of all clients
+ *        content:
+ *          application/json:
+ *            schema:
+ *              type: array
+ *              items:
+ *                $ref: "#/components/schemas/Client"
+ *      500:
+ *        description: Server error
  */
 router.get("/task", async (req, res) => {
   try {

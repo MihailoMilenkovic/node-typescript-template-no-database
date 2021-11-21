@@ -13,7 +13,7 @@ const port = process.env.PORT || 3000;
 // Swagger config https://swagger.io/specification/#infoObject
 const swaggerOptions = {
   swaggerDefinition: {
-    openapi: "3.0.1",
+    openapi: "3.0.0",
     info: {
       title: "Template API",
       version: "1.0.0",
@@ -37,11 +37,7 @@ const swaggerUIOptions = {
   // explorer: true,
 };
 console.log(swaggerDocs);
-app.use(
-  "/api-docs",
-  swaggerUi.serve,
-  swaggerUi.setup(swaggerDocs, swaggerUIOptions)
-);
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocs));
 app.use(express.json());
 
 app.use(userRouter);
